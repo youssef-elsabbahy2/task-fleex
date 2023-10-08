@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-direction</title>
+    <style>
+
+:root{
+    --color-primary: #3740ff;
+  --color-primary-dark: #272eb5;
+  --color-primary-light: #3740ff;
+  --color-primary-x-light: #e8f0fe;
+  --color-light: #ffffff;
+  --color-dark: #202124;
+  --color-off-white: #f3f4f4;
+  --color-mid: #5f6368;
+  --color-mid-dark: #3c4043;
+  --color-stroke: #dadce0;
+  --metric-gutter: 1.5rem;
+  --metric-box-spacing: 1rem;
+  --metric-radius: 3px;
+  --generic-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 2px 6px 2px rgba(60, 64, 67, 0.15);
+  --font-mono: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+
+}  
+
+select {
+    min-width: 80px;
+    --font-mono: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    font: inherit;
+    background: var(--color-off-white);
+    border: 1px solid var(--color-stroke);
+    min-width: 80px;
+    border-radius: 7px;
+}
+body
+{
+
+    font-family: sans-serif;
+    padding: 30px;
+}
+h1 
+{
+    display: inline-block;
+    padding-right: 3px;
+}
+code
+{
+  padding: 10px;
+  border-radius: 10px;
+  background: var(--color-off-white);
+  border: 1px solid var(--color-stroke);
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  hyphens: none;
+  tab-size: 2;
+  text-align: left;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}      
+.container {
+  border-radius: 20px;
+    background-color: #eaeaea;
+    padding: 30px;
+    display: flex;
+    gap: 1rem;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.box:nth-child(2) {
+  order: 2;
+}
+
+.box:nth-child(3) {
+  order: 3;
+}
+
+.callout
+{
+  box-sizing: border-box;
+    padding: 20px;
+    background: var(--color-primary-x-light);
+    border: 1px solid var(--color-primary-light);
+    color: var(--color-primary-dark);
+    position: relative;
+    width: 100%;
+    margin-right: 0px;
+}
+.callout::before {
+  content: "";
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23272eb5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M14 9.5c0-.825.675-1.5 1.5-1.5h1c.825 0 1.5.675 1.5 1.5v1c0 .825-.675 1.5-1.5 1.5h-1c-.825 0-1.5-.675-1.5-1.5v-1zM20 24h-8v-2h2v-6h-2v-2h6v8h2z"/><path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm0 29C8.82 29 3 23.18 3 16S8.82 3 16 3s13 5.82 13 13-5.82 13-13 13z"/></svg>');
+  background-size: cover;
+  width: 1.25rem;
+  height: 1.25rem;
+  display: block;
+  position: absolute;
+  top: 35px;
+  left: 37rem;
+}
+.callout p{
+    font-weight: 900;
+}
+.box {
+  padding: var(--metric-box-spacing);
+  border:none;
+  box-shadow: var(--generic-shadow);
+  font-weight: 500;
+  text-align: center;
+  max-width: 40rem;
+  color: white;
+  border-radius: 15px;
+}
+.box{
+  background: var(--color-primary);
+}
+
+footer {
+  margin: 3rem 0;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+
+
+    </style>
+</head>
+<body dir="rtl">
+    <main>
+        <div class="wrapper">
+          <article class="flow">
+            <h1 >خصائص ال <br><br><code>flex-direction</code>  </h1><br>
+            <figure class="callout">
+              <p>*      استخدم قائمة التحديد لتغيير خصائص ال <br><br><code>flex-direction</code>.</p>
+              <p>1- row: العناصر تتوضع كصف واحد.</p>
+              <p>2- row-reverse: العناصر تتوضع كصف واحد من نهاية حاوية الفليكس (بالمصري يعني من الجهة التانيه بس متشقلبه وعلي اتجاه ال X).</p>
+              <p>3- column: العناصر تتوضع كعمود واحد.</p>
+              <p>4- column-reverse: العناصر تتوضع كعمود واحد من نهاية حاوية الفليكس (بالمصري يعني من الجهة التانيه بس متشقلبه وعلي اتجاه ال Y).</p>
+          
+            </figure>
+            <div class="controls">
+              <label>
+            من هنا      <select id="switcher">
+                <option value="row">row</option>
+                <option value="row-reverse">row-reverse</option>
+                <option value="column">column</option>
+                <option value="column-reverse">column-reverse</option>
+              </select>  تحكم في خصائص ال  <br><br><code>flex-direction</code>  
+           
+              </label>
+            </div>
+            <div class="container" id="container">
+              <div class="box bg-primary color-light">Item one</div>
+              <div class="box">Item two</div>
+              <div class="box bg-primary-x-light">Item three</div>
+            </div>
+          </article>
+        </div>
+      </main>
+
+      <footer class="attribution">
+        Coded by <a style="color: #0163bd; font-size: 15px; font-family: sans-serif;font-weight: 600;" href="https://web.facebook.com/youssef.elsabbahy.9" target="_blank"> Eng / Youssef El-Sabahy</a>
+      </footer>
+      
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      <script>
+        $(document).ready(function() {
+  const switcher = $("#switcher");
+  const demo = $(".container");
+
+  switcher.on("change", function(evt) {
+    demo.css("flex-direction", evt.target.value);
+  });
+});
+      </script>
+</body>
+</html>
+

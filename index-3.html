@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>align-items</title>
+    <style>
+      
+footer {
+  margin: 3rem 0;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+:root{
+    --color-primary: #3740ff;
+  --color-primary-dark: #272eb5;
+  --color-primary-light: #3740ff;
+  --color-primary-x-light: #e8f0fe;
+  --color-light: #ffffff;
+  --color-dark: #202124;
+  --color-off-white: #f3f4f4;
+  --color-mid: #5f6368;
+  --color-mid-dark: #3c4043;
+  --color-stroke: #dadce0;
+  --metric-gutter: 1.5rem;
+  --metric-box-spacing: 1rem;
+  --metric-radius: 3px;
+  --generic-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 2px 6px 2px rgba(60, 64, 67, 0.15);
+  --font-mono: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+
+}  
+
+select {
+    min-width: 80px;
+    --font-mono: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    font: inherit;
+    background: var(--color-off-white);
+    border: 1px solid var(--color-stroke);
+    min-width: 80px;
+    border-radius: 7px;
+}
+body
+{
+    font-family: sans-serif;
+    padding: 30px;
+}
+h1 
+{
+    display: inline-block;
+    padding-right: 3px;
+}
+code
+{
+  padding: 10px;
+  border-radius: 10px;
+  background: var(--color-off-white);
+  border: 1px solid var(--color-stroke);
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  hyphens: none;
+  tab-size: 2;
+  text-align: left;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}      
+.container {
+  border-radius: 20px;
+    background-color: #eaeaea;
+    padding: 30px;
+    display: -webkit-box;
+    gap: 1rem;
+    margin-top: 20px;
+    flex-wrap: var(--var-flex-wrap);
+    max-width: 400px;
+}
+
+.callout
+{
+  box-sizing: border-box;
+    padding: 20px;
+    background: var(--color-primary-x-light);
+    border: 1px solid var(--color-primary-light);
+    color: var(--color-primary-dark);
+    position: relative;
+    width: 100%;
+    margin-right: 0px;
+}
+
+.callout p{
+    font-weight: 900;
+}
+.box {
+  padding: var(--metric-box-spacing);
+  border:none;
+  box-shadow: var(--generic-shadow);
+  font-weight: 500;
+  text-align: center;
+  max-width: 40rem;
+  color: white;
+  border-radius: 15px;
+}
+
+.box:not([class*="bg-"]) {
+    background: var(--color-primary);
+  color: #ffffff;
+}
+
+
+
+.warning {
+  font-family: sans-serif; 
+    width: 100%;
+    padding: 0px;
+    height: 81px;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    background: #FEF7D1;
+    border: 1px solid #F7C752;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px -3px #111;
+
+}
+
+.warning__icon {
+  width: 20px;
+  height: 20px;
+  transform: translateY(-2px);
+  margin-right: 8px;
+}
+
+.warning__icon path {
+  fill: #F7C752;
+}
+
+.warning__title {
+  font-weight: 500;
+  font-size: 14px;
+  color: #755118;
+  padding-right: 11px;
+}
+
+
+    </style>
+</head>
+<body dir="rtl">
+    <main>
+        <div class="wrapper">
+          <article class="flow">
+            <h1> خصائص ال   <br><br><code>align-items</code> </h1>
+            <figure class="callout">
+              <p>
+                استخدم قائمة الاختيار لتغيير قيمة <br><br><code>align-items</code><br> 
+              </p>
+              <p>1. flex-start: يقوم بمحاذاة العناصر في البداية الأولى للعنصر الأب.
+
+              </p>
+<p>2. flex-end: يقوم بمحاذاة العناصر في النهاية الأخيرة للعنصر الأب.
+    (بالمصري :  بيحط العناصر في أول العنصر الأب.)
+</p>
+<p>3. center: يقوم بمحاذاة العناصر في الوسط الأفقي للعنصر الأب.
+    (بالمصري :  بيحط العناصر في اخر العنصر الأب.)
+</p>
+<p>4. baseline: يقوم بمحاذاة العناصر بناءً على خط الأساس الخاص بهم.
+    (بالمصري :بيحط العناصر على خط الأساس الخاص بيهم...)
+</p>
+<p>5. stretch: يقوم بتمدد العناصر لملء المساحة المتاحة داخل العنصر الأب.
+    (بالمصري :  بيمدد العناصر عشان تملأ المساحة اللي متاحة جوة العنصر الأب..)
+</p>
+<div class="warning">
+  <div class="warning__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" height="24" fill="none"><path fill="#393a37" d="m13 14h-2v-5h2zm0 4h-2v-2h2zm-12 3h22l-11-19z"></path></svg>
+  </div>
+      <div class="warning__title">يجب ان يحصل الديف الأب علي <br> flex-direction: column <br>حتي تعمل خاصية ال align-items.  </div>
+
+</div>
+            </figure>
+            <div class="controls flow">
+              <label>
+            
+
+                قم بتحديد قيمة "align-items" من خلال استخدام القائمة المنسدلة التالية:
+                
+     
+
+                <select id="switcher">    <option value="stretch">Stretch</option>    <option value="flex-start">Flex Start</option>    <option value="flex-end">Flex End</option>    <option value="center">Center</option></select>
+                
+                <br>
+                <label class="toggle" for="toggle-element">
+                    <span class="toggle__label"> Switch flex direction </span></label>
+                <input type="checkbox" role="switch" class="toggle__element" id="toggle-element" />
+                <div class="toggle__decor" aria-hidden="true">
+                  <div class="toggle__thumb"></div>
+                </div>
+              </label>
+            </div>
+            <div class="container" id="container">
+              <div class="box">Item one</div>
+              <div class="box">Item two</div>
+              <div class="box">Item three</div>
+              <div class="box">Item four</div>
+              <div class="box">Item five</div>
+            </div>
+          </article>
+        </div>
+      </main>
+
+      <footer class="attribution">
+        Coded by <a style="color: #0163bd; font-size: 15px; font-family: sans-serif;font-weight: 600;" href="https://web.facebook.com/youssef.elsabbahy.9" target="_blank"> Eng / Youssef El-Sabahy</a>
+      </footer>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      <script>
+$("#switcher").change(function() {
+  $(".container").css("align-items", $(this).val());
+});
+
+$("#toggle-element").change(function() {
+  if ($(this).prop("checked")) {
+    $(".container").css("display", "flex");
+    $(".container").css("flex-direction", "column");
+  } else {
+    $(".container").css("flex-direction", "row");
+    $(".container").css("display", " -webkit-box");
+  }
+});
+      </script>
+</body>
+</html>
+
